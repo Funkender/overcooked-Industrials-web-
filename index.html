@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Deep Fried Client Download</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    button {
+      padding: 14px 28px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background: #3b82f6;
+      color: white;
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #2563eb;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Deep Fried Client</h1>
+  <p>Klicke auf den Button, um die Datei herunterzuladen.</p>
+
+  <button id="downloadBtn">Download</button>
+
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+      const fileUrl = "https://github.com/Overcooked-Industries/Deep-Fried-Client/releases/download/v1.0.3/deep_fried_client-1.0.3.jar";
+      const a = document.createElement('a');
+      a.href = fileUrl;
+      a.download = "deep_fried_client-1.0.3.jar"; 
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
+  </script>
+</body>
+</html>
