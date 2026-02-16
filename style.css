@@ -35,17 +35,43 @@ body {
     100% { background-position: 0% 0%; }
 }
 
-/* ⭐ LANGSAMER, SICHTBARER SLIDE-IN (beim Start + Scroll) */
+/* ⭐ BASIS FÜR ALLE SLIDE-IN EFFEKTE */
 .fade-in {
     opacity: 0;
-    transform: translateY(160px);   /* sehr stark sichtbar */
-    filter: blur(12px);             /* deutlicher Effekt */
-    transition: all 2.2s cubic-bezier(0.16, 1, 0.3, 1); /* LANGSAM & smooth */
+    filter: blur(12px);
+    transition: all 2.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.fade-in.visible {
+/* ⭐ SLIDE VON UNTEN */
+.fade-in.bottom {
+    transform: translateY(160px);
+}
+
+.fade-in.bottom.visible {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
+}
+
+/* ⭐ SLIDE VON LINKS */
+.fade-in.left {
+    transform: translateX(-180px);
+}
+
+.fade-in.left.visible {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+/* ⭐ SLIDE VON RECHTS */
+.fade-in.right {
+    transform: translateX(180px);
+}
+
+.fade-in.right.visible {
+    opacity: 1;
+    transform: translateX(0);
     filter: blur(0);
 }
 
