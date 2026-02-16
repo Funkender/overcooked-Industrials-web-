@@ -1,9 +1,15 @@
-// Langsamer, sichtbarer Slide-In beim Scrollen UND beim Start
 const elements = document.querySelectorAll('.fade-in');
 
+elements.forEach((el, i) => {
+    if (i % 2 === 0) {
+        el.classList.add('left');
+    } else {
+        el.classList.add('right');
+    }
+});
+
 function checkFade() {
-    const trigger = window.innerHeight * 0.80; 
-    // 80% Sichtbarkeit → perfekt für Mobile & PC
+    const trigger = window.innerHeight * 0.80;
 
     elements.forEach(el => {
         const top = el.getBoundingClientRect().top;
@@ -14,8 +20,5 @@ function checkFade() {
     });
 }
 
-// Beim Scrollen prüfen
 window.addEventListener('scroll', checkFade);
-
-// Beim Laden prüfen (damit der Start-Slide funktioniert)
 window.addEventListener('load', checkFade);
