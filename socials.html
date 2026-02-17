@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socials – Overcooked Industrials</title>
+
+    <!-- Menü-CSS -->
+    <link rel="stylesheet" href="menu.css">
+
+    <!-- Minecraft Schrift -->
+    <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+
+    <!-- Normale Schrift für Überschrift -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ⭐ Hintergrund */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Minecraftia', sans-serif;
+            color: white;
+
+            background:
+                radial-gradient(circle at 20% 30%, #3a000c 0%, transparent 45%),
+                radial-gradient(circle at 75% 25%, #111111 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, #000000 0%, transparent 65%),
+                radial-gradient(circle at 85% 70%, #ff3d00 0%, transparent 50%),
+                #000000;
+
+            background-size: 200% 200%;
+            animation: waveMove 12s ease-in-out infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes waveMove {
+            0%   { background-position: 0% 0%; }
+            25%  { background-position: 100% 20%; }
+            50%  { background-position: 60% 100%; }
+            75%  { background-position: 20% 60%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* ⭐ Container */
+        .socials-container {
+            max-width: 900px;
+            margin: 150px auto 80px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* ⭐ Überschrift */
+        .socials-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff0055;
+            text-shadow:
+                0 0 4px #ff0055,
+                0 0 10px #ff0055,
+                0 0 18px #ff0055;
+        }
+
+        /* ⭐ Social Cards Grid */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .social-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 14px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            opacity: 0;
+            filter: blur(12px);
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.12);
+        }
+
+        .social-card h3 {
+            color: #ff0055;
+            margin-bottom: 12px;
+        }
+
+        .social-card a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        /* ⭐ Icons */
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+        }
+
+        /* ⭐ Slide-In Effekte */
+        .slide-left {
+            transform: translateX(-200px);
+            transition: all 3.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide-right {
+            transform: translateX(200px);
+            transition: all 3.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .visible {
+            opacity: 1 !important;
+            transform: translateX(0) !important;
+            filter: blur(0) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENU BUTTON -->
+    <div class="menu-btn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- SIDE MENU -->
+    <nav class="side-menu">
+        <div class="menu-item" onclick="location.href='index.html'">About Us</div>
+        <div class="menu-item" onclick="location.href='client.html'">Deep Fried Client</div>
+        <div class="menu-item" onclick="location.href='socials.html'">Socials</div>
+
+        <!-- ⭐ FIXED: Kategorie 4 → Features & Commands -->
+        <div class="menu-item" onclick="location.href='features&commands.html'">Features & Commands</div>
+    </nav>
+
+    <!-- ⭐ SOCIALS CONTENT -->
+    <div class="socials-container">
+        <h1 class="socials-title">Socials</h1>
+
+        <div class="social-grid">
+
+            <!-- ⭐ Discord -->
+            <div class="social-card slide-right">
+                <img src="images/discord.png" class="social-icon" alt="Discord">
+                <h3>Discord</h3>
+                <a href="https://discord.gg/dwub4GqE2" target="_blank">
+                    discord.gg/dwub4GqE2
+                </a>
+            </div>
+
+            <!-- ⭐ YouTube -->
+            <div class="social-card slide-left">
+                <img src="images/youtube.png" class="social-icon" alt="YouTube">
+                <h3>YouTube</h3>
+                <p>Coming Soon...</p>
+            </div>
+
+            <!-- ⭐ GitHub -->
+            <div class="social-card slide-right">
+                <img src="images/github.png" class="social-icon">
+                <h3>GitHub</h3>
+                <a href="https://github.com/Overcooked-Industries">
+                    github.com/Overcooked-Industries
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Menü Script -->
+    <script src="menu.js"></script>
+
+    <!-- Slide-In Script -->
+    <script>
+        const cards = document.querySelectorAll('.social-card');
+
+        function checkCards() {
+            const trigger = window.innerHeight * 0.85;
+
+            cards.forEach(card => {
+                const top = card.getBoundingClientRect().top;
+                if (top < trigger) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkCards);
+        window.addEventListener('load', checkCards);
+    </script>
+
+</body>
+</html>
 
