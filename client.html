@@ -3,63 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overcooked Industrials – Offizielle Website</title>
+    <title>Deep Fried Client – Overcooked Industrials</title>
 
-    <!-- Minecraft Font für ALLES außer dem Titel -->
+    <!-- Fonts + Menü -->
     <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Emoji Fix -->
+    <style>
+        body, p, h2, h3, a, button, .feature-card, .subtitle {
+            font-family: 'Minecraftia', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+        }
+    </style>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
-
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Logo -->
-    <div class="logo">
-        <img src="images/logo.png" alt="Mod Logo">
+    <!-- ⭐ Menü Button -->
+    <div class="menu-btn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
     </div>
 
+    <!-- ⭐ Side Menu -->
+    <nav class="side-menu">
+        <div class="menu-item" onclick="location.href='index.html'">About Us</div>
+        <div class="menu-item" onclick="location.href='client.html'">Deep Fried Client</div>
+        <div class="menu-item" onclick="location.href='socials.html'">Socials</div>
+        <div class="menu-item" onclick="location.href='features&commands.html'">Features & Commands</div>
+    </nav>
+
+    <!-- ⭐ Logo -->
+    <div class="logo">
+        <img src="images/logo.png" alt="">
+    </div>
+
+    <!-- ⭐ Header -->
     <header class="hero">
         <div class="hero-content">
-
-            <!-- TITEL = normale Schrift -->
             <h1 class="title glow normal-font">DeepFried Client</h1>
-
-            <!-- Neuer Text -->
             <p class="subtitle">Der beste 1.21.11 Client</p>
-
             <a href="#download" class="btn">Download</a>
         </div>
     </header>
 
+    <!-- ⭐ Features -->
     <section class="section" id="features">
         <h2>Features</h2>
         <div class="features-grid">
-            <div class="feature-card fade-in">
+
+            <div class="feature-card fade-in right">
                 <h3>🕊️ Fly</h3>
                 <p>Bewege dich frei durch die Welt ohne Grenzen.</p>
             </div>
-            <div class="feature-card fade-in">
+
+            <div class="feature-card fade-in left">
                 <h3>🌌 No‑Gravity</h3>
                 <p>Schalte die Schwerkraft komplett aus.</p>
             </div>
-            <div class="feature-card fade-in">
+
+            <div class="feature-card fade-in right">
                 <h3>🛡️ No‑Fall</h3>
                 <p>Kein Fallschaden mehr – egal aus welcher Höhe.</p>
             </div>
+
         </div>
     </section>
 
+    <!-- ⭐ Screenshots -->
     <section class="section" id="screenshots">
         <h2>Screenshots</h2>
         <div class="gallery">
-            <img src="images/img1.jpg" class="fade-in" alt="Screenshot 1">
-            <img src="images/img2.jpg" class="fade-in" alt="Screenshot 2">
-            <img src="images/img3.jpg" class="fade-in" alt="Screenshot 3">
+            <img src="images/img1.jpg" class="fade-in" alt="">
+            <img src="images/img2.jpg" class="fade-in" alt="">
+            <img src="images/img3.jpg" class="fade-in" alt="">
         </div>
     </section>
 
+    <!-- ⭐ Download -->
     <section class="section" id="download">
         <h2>Download</h2>
         <p>Hol dir jetzt die neueste Version von Overcooked Industrials.</p>
@@ -83,6 +108,8 @@
         <p>© 2026 Overcooked Industrials – Copyright friedbacon0</p>
     </footer>
 
+    <script src="menu.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
