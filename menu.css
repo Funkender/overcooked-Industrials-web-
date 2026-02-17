@@ -1,1 +1,69 @@
+/* --- GLOBAL MENU STYLE --- */
+
+.menu-btn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 38px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.menu-btn .bar {
+    width: 100%;
+    height: 5px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* --- SIDE MENU (transparent, kein dunkler Hintergrund) --- */
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100vh;
+    backdrop-filter: blur(12px); /* leichter Blur, kein dunkler Layer */
+    background: rgba(255,255,255,0.05); /* fast unsichtbar */
+    border-left: 1px solid rgba(255,255,255,0.15);
+    padding-top: 100px;
+    transition: right 0.6s ease;
+    z-index: 9998;
+}
+
+.side-menu.open {
+    right: 0;
+}
+
+/* --- MENU ITEMS (einzeln rein sliden) --- */
+
+.menu-item {
+    padding: 18px 25px;
+    font-size: 1.3rem;
+    color: white;
+    opacity: 0;
+    transform: translateX(120px);
+    filter: blur(10px);
+    transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+}
+
+.menu-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+/* Verzögerungen für nacheinander */
+.menu-item:nth-child(1) { transition-delay: 0.1s; }
+.menu-item:nth-child(2) { transition-delay: 0.25s; }
+.menu-item:nth-child(3) { transition-delay: 0.4s; }
+.menu-item:nth-child(4) { transition-delay: 0.55s; }
 
